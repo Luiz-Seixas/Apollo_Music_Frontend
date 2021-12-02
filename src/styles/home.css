@@ -9,3 +9,16 @@
   height: 800px;
   background: #3b05a0;
 }
+
+.content .artistList {
+  display: flex;
+}
+
+.content .artistList .artists {
+  margin-right: 100px;
+}
+
+.content .artistList .albums {
+  display: flex;
+  flex-direction: column;
+}

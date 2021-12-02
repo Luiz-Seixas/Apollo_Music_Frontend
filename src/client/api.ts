@@ -18,6 +18,24 @@ class Api {
       console.log(error);
     }
   }
+
+  public async getWorkList(workName: string) {
+    try {
+      const res = await this.instance.get(`/search/work/${workName}`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  public async getAlbumList(albumName: string) {
+    try {
+      const res = await this.instance.get(`/search/album/${albumName}`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default new Api("http://localhost:3333");
