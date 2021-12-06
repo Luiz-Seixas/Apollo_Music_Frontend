@@ -1,7 +1,5 @@
-import { FormEvent } from "react";
-
 export interface IAppContextData {
-  searchData: (event: FormEvent) => Promise<void>;
+  searchData: (params: string) => Promise<void>;
   setSearch: (search: string) => any;
   artists: IArtist[];
   works: IWork[];

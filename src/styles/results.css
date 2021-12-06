@@ -1,0 +1,25 @@
+#page {
+  background: #17171a;
+}
+
+.artistsList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.artistsList .artists, .works, .albums {
+  color: aliceblue;
+}
+
+.artistsList li {
+  list-style: none;
+}
+
+/* .artistsList .artists, .works, .albums h5 {
+
+}
+
+.artistsList .artists, .works, .albums strong {}
+
+.artistsList .artists, .works, .albums p {} */
+

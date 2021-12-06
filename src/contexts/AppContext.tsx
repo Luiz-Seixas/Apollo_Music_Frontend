@@ -1,4 +1,4 @@
-import { useState, createContext, ReactNode, FormEvent } from "react";
+import { useState, createContext, ReactNode } from "react";
 import api from "../client/api";
 import {
   IAppContextData,
@@ -19,8 +19,9 @@ export function AppProvider(props: IAppProvider) {
   const [works, setWorks] = useState<IWork[]>([]);
   const [albums, setAlbums] = useState<IAlbum[]>([]);
 
-  async function searchData(event: FormEvent) {
-    event.preventDefault();
+  async function searchData(params: string) {
+    // event.preventDefault();
+    setSearch(params);
     // formatando a string o primeiro retira os espaços e troca por + e o segundo replace retira os caracteres especiais como ~
     const formattedString = search
       .replace(/\s/g, "+")
