@@ -7,60 +7,79 @@ import "../styles/results.css";
 export function Results() {
   const { artists, works, albums, searchData } = useContext(AppContext);
   console.log(artists);
-
   const { name } = useParams();
 
-  console.log(name);
+  function reduceList(list: any[]) {
+    return list.slice(0, 5);
+  }
+
+  const reducedArtistsList = reduceList(artists);
+
+  const reducedWorksList = reduceList(works);
+
+  const reducedAlbumsList = reduceList(albums);
 
   useEffect(() => {
-    if (name) {
-      searchData(name);
-    }
+    if (name) searchData(name);
   }, []);
+
   return (
     <div id="page">
-      <h1>Hello</h1>
-      <button
-        onClick={() => {
-          console.log(artists);
-        }}
-      >
-        click here
-      </button>
-      <ul className="artistsList">
-        <li className="artists">
-          {artists.map((artist) => (
-            <div>
+      <div className="content">
+        <div className="artistsList">
+          <h3>Artists</h3>
+          <ul className="artists">
+            {reducedArtistsList.map((artist) => (
               <Link to="">
-                <h5>Artists</h5>
-                <p>{artist.name}</p>
+                <li>
+                  <p>{artist.name}</p>
+                  <div className="moreInfo">
+                    <span>Artist</span>
+                  </div>
+                </li>
+                <hr />
               </Link>
-            </div>
-          ))}
-        </li>
-        <li className="works">
-          {works.map((work) => (
-            <div>
-              <h5>Works</h5>
-              <p>{work.title}</p>
-              <strong>type:</strong>
-              <p>{work.type}</p>
-            </div>
-          ))}
-        </li>
-        <li className="albums">
-          {albums.map((album) => (
-            <div>
-              <h5>Album</h5>
-              <p>{album.title}</p>
-              <strong>Artist</strong>
-              <p>{album.artist}</p>
-              <strong>Date</strong>
-              <p>{album.date}</p>
-            </div>
-          ))}
-        </li>
-      </ul>
+            ))}
+          </ul>
+        </div>
+        <div className="worksList">
+          <h3>Works</h3>
+          <ul className="works">
+            {reducedWorksList.map((work) => (
+              <Link to="">
+                <li>
+                  <p>{work.title}</p>
+                  <div className="moreInfo">
+                    <span>type:</span>
+                    <p>{work.type}</p>
+                  </div>
+                </li>
+                <hr />
+              </Link>
+            ))}
+          </ul>
+        </div>
+        <div className="albumsList">
+          <h3>Albums</h3>
+          <ul className="albums">
+            {reducedAlbumsList.map((album) => (
+              <Link to="">
+                <li>
+                  <p>{album.title}</p>
+                  <div className="moreInfo">
+                    <span>Album/</span>
+                    <span>Artist:</span>
+                    <p>{album.artist}</p>
+                    <span>Date</span>
+                    <p>{album.date}</p>
+                  </div>
+                </li>
+                <hr />
+              </Link>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

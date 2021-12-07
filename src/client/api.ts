@@ -36,6 +36,15 @@ class Api {
       console.log(error);
     }
   }
+
+  public async getWorksByArtist(artistId: string) {
+    try {
+      const res = await this.instance.get(`/browser/${artistId}`);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
 
 export default new Api("http://localhost:3333");

@@ -5,6 +5,7 @@ import {
   IArtist,
   IWork,
   IAlbum,
+  WorkResponse,
 } from "../interfaces/response";
 
 export const AppContext = createContext({} as IAppContextData);
@@ -18,6 +19,7 @@ export function AppProvider(props: IAppProvider) {
   const [artists, setArtists] = useState<IArtist[]>([]);
   const [works, setWorks] = useState<IWork[]>([]);
   const [albums, setAlbums] = useState<IAlbum[]>([]);
+  const [worksByArtist, setWorksByArtist] = useState<WorkResponse[]>([]);
 
   async function searchData(params: string) {
     // event.preventDefault();
@@ -41,10 +43,25 @@ export function AppProvider(props: IAppProvider) {
     setAlbums(resAlbum);
   }
 
+  async function searchWorksByArtist(params: string) {
+    const resWorks: WorkResponse[] = await api.getWorksByArtist(params);
+
+    setWorksByArtist(resWorks);
+  }
+
   return (
     // props.childre é tudo o que coloca dentro do componente
     <AppContext.Provider
-      value={{ searchData, setSearch, search, artists, works, albums }}
+      value={{
+        searchData,
+        searchWorksByArtist,
+        setSearch,
+        worksByArtist,
+        search,
+        artists,
+        works,
+        albums,
+      }}
     >
       {props.children}
     </AppContext.Provider>

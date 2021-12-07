@@ -1,19 +1,65 @@
 #page {
-  background: #17171a;
-}
-
-.artistsList {
+  background: linear-gradient(100deg, #315cd4 0%, #121214 100%);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
 }
 
-.artistsList .artists, .works, .albums {
-  color: aliceblue;
+#page .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 40px;
 }
 
-.artistsList li {
+#page .content h3 {
+  color: #e1e1e6;
+  margin-bottom: 16px;
+
+}
+
+hr {
+  margin-bottom: 16px;
+  color: #e1e1e6;
+  margin-left: 10px;
+}
+
+li{
   list-style: none;
+
+  width: 700px;
+  padding-left: 16px;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  color: #e1e1e6;
+
 }
+
+li .moreInfo{
+  margin-bottom: 4px;
+  display: flex;
+
+  color: #b1b1b1;
+}
+
+li span {
+  margin-right: 10px;
+}
+
+ul a {
+  text-decoration: none;
+}
+
+.content .albumsList .albums span{
+
+}
+
+
+
 
 /* .artistsList .artists, .works, .albums h5 {
 

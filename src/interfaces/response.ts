@@ -1,6 +1,8 @@
 export interface IAppContextData {
   searchData: (params: string) => Promise<void>;
+  searchWorksByArtist: (params: string) => Promise<void>;
   setSearch: (search: string) => any;
+  worksByArtist: WorkResponse[];
   artists: IArtist[];
   works: IWork[];
   albums: IAlbum[];
@@ -30,4 +32,24 @@ export interface IAlbum {
   id: string;
   artist: IArtist[];
   date: string;
+}
+
+export interface WorkResponse {
+  created: string;
+  "work-offse": number;
+  "work-count": number;
+  works: Work[];
+}
+
+export interface Work {
+  id: string;
+  title: string;
+  type: string;
+  score: number;
+  lenguage: string;
+  attributes: [];
+  iswcs: [];
+  disambiguation: string;
+  languages: [];
+  relations: [];
 }
