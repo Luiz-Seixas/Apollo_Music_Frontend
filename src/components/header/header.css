@@ -7,15 +7,19 @@
   align-items: center;
   justify-content: space-around;
 
-  /* padding: 0 40px; */
   box-sizing: border-box;
 }
 
 .headerContent a {
   text-decoration: none;
-  color: #e1e1e6;
+  color: var(--text-color);
 
   left: 0;
+}
+
+.headerContent form {
+  display: flex;
+  align-items: center;
 }
 
 .headerContent input {
@@ -24,15 +28,29 @@
   padding-left: 8px;
 
   background-color: #121213e0;
-  color: #e1e1e6;
+  color: var(--text-color);
   border: solid 2px black;
+  border-right: none;
   outline: 0;
 }
 
 .headerContent button {
+  height: 36px;
+  width: 36px;
+  background: #121213e0;
+  border: solid 2px black;
+  border-left: none;
 
 }
 
+.headerContent button svg {
+  height: 24px;
+  width: 24px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
 .headerContent span {
-  color: #e1e1e6;
+  color: var(--text-color);
 }

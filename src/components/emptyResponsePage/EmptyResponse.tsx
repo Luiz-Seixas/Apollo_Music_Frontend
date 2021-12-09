@@ -8,7 +8,7 @@ export function EmptyResponsePage() {
         <div className="message">
           <span>400!</span>
           <p>
-            Sorry, this artist does not have works registered in our system.{" "}
+            Sorry, this artist does not have works registered in our system.
           </p>
         </div>
         <img src={NoData} alt="noDataImage" />

@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../contexts/AppContext";
 
+import { MdSearchOff } from "react-icons/md";
+
 export function Header() {
   const { search, setSearch } = useContext(AppContext);
   const history = useNavigate();
@@ -22,7 +24,7 @@ export function Header() {
             history(`/results/${search}`);
           }}
         >
-          Q
+          <MdSearchOff />
         </button>
       </form>
       <span>Library</span>
