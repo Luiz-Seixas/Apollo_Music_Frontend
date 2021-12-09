@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { Header } from "../components/header/Header";
 import { AppContext } from "../contexts/AppContext";
 
 import "../styles/results.css";
@@ -25,6 +26,7 @@ export function Results() {
 
   return (
     <div id="page">
+      <Header />
       <div className="content">
         <div className="artistsList">
           <h3>Artists</h3>

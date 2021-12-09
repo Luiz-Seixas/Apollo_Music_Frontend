@@ -1,0 +1,38 @@
+.EmptyPage {
+  height: 87.2vh;
+  display: flex;
+  align-items: center;
+}
+
+.EmptyPage .emptyContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
+
+}
+
+.EmptyPage .emptyContent img {
+  height: 400px;
+  width: 400px;
+}
+
+.EmptyPage .emptyContent .message {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.EmptyPage .emptyContent .message span {
+  font-size: 80px;
+  margin: 24px 0;
+}
+
+.EmptyPage .emptyContent .message p {
+  color: var(--text-color);
+  font-size: 32px;
+  max-width: 560px;
+}
+
+
+

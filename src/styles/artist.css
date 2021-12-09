@@ -1,19 +1,20 @@
 #artistPage {
-  width: 100vw;
   background: linear-gradient(100deg, #315cd4 0%, #121214 100%);
+}
+
+#artistPage .worksContent {
+  width: 100vw;
+  margin-top: 60px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#artistPage .worksContent {
-  margin-top: 80px;
-}
-
 #artistPage .worksContent h2 {
   margin-bottom: 20px;
-  color: #e1e1e6;
+  color: var(--text-color);
 }
 
 #artistPage .worksContent .worksList li {
