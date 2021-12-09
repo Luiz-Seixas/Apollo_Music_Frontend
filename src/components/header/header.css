@@ -1,0 +1,38 @@
+.headerContent {
+  height: 60px;
+  width: 100%;
+  background: #121214;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  /* padding: 0 40px; */
+  box-sizing: border-box;
+}
+
+.headerContent a {
+  text-decoration: none;
+  color: #e1e1e6;
+
+  left: 0;
+}
+
+.headerContent input {
+  height: 32px;
+  width: 700px;
+  padding-left: 8px;
+
+  background-color: #121213e0;
+  color: #e1e1e6;
+  border: solid 2px black;
+  outline: 0;
+}
+
+.headerContent button {
+
+}
+
+.headerContent span {
+  color: #e1e1e6;
+}

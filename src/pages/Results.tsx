@@ -29,17 +29,20 @@ export function Results() {
         <div className="artistsList">
           <h3>Artists</h3>
           <ul className="artists">
-            {reducedArtistsList.map((artist) => (
-              <Link to="">
-                <li>
-                  <p>{artist.name}</p>
-                  <div className="moreInfo">
-                    <span>Artist</span>
-                  </div>
-                </li>
-                <hr />
-              </Link>
-            ))}
+            {reducedArtistsList.map((artist) => {
+              const link = `/artist/${artist.id}`;
+              return (
+                <Link to={link}>
+                  <li>
+                    <p>{artist.name}</p>
+                    <div className="moreInfo">
+                      <span>Artist</span>
+                    </div>
+                  </li>
+                  <hr />
+                </Link>
+              );
+            })}
           </ul>
         </div>
         <div className="worksList">

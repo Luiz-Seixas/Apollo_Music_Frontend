@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,11 @@ import { MdSearchOff } from "react-icons/md";
 export function Home() {
   const { search, setSearch } = useContext(AppContext);
   const history = useNavigate();
+
+  useEffect(() => {
+    const name = localStorage.getItem("search");
+    console.log(name);
+  }, []);
 
   return (
     <div className="App">
@@ -27,10 +32,10 @@ export function Home() {
               value={search}
               onChange={(event) => setSearch(event.target.value)}
             />
-            {/* <Link to="/results"> */}
             <button
               type="submit"
               onClick={() => {
+                localStorage.setItem("search", search);
                 history(`/results/${search}`);
               }}
             >
